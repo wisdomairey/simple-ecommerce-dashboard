@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install Dependencies & Start Development",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-c",
+				"Write-Host 'Installing backend dependencies...' -ForegroundColor Green; cd backend; npm install; Write-Host 'Installing frontend dependencies...' -ForegroundColor Green; cd ../frontend; npm install; Write-Host 'Setup complete! Check README.md for next steps.' -ForegroundColor Green"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

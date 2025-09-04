@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shopping bag main shape -->
+  <path d="M6 10H26L24 24H8L6 10Z" fill="#4F46E5" stroke="#4F46E5" stroke-width="2"/>
+  
+  <!-- Shopping bag handles -->
+  <path d="M10 10V8C10 5.79086 11.7909 4 14 4H18C20.2091 4 22 5.79086 22 8V10" stroke="#4F46E5" stroke-width="2" fill="none"/>
+  
+  <!-- Orange dot accent -->
+  <circle cx="24" cy="8" r="3" fill="#F97316"/>
+  
+  <!-- Subtle shadow/depth -->
+  <path d="M8 24L9 26H25L24 24H8Z" fill="#3730A3" opacity="0.6"/>
+</svg>
