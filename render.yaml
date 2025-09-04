@@ -1,0 +1,45 @@
+# Render Blueprint for NexaShop E-commerce Platform
+# This file defines both backend and frontend services for Render deployment
+
+services:
+  # Backend API Service
+  - type: web
+    name: nexashop-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false # You'll need to add this manually in Render dashboard
+      - key: STRIPE_SECRET_KEY
+        sync: false # You'll need to add this manually in Render dashboard
+      - key: FRONTEND_URL
+        value: https://nexashop-frontend.onrender.com # Update with actual frontend URL
+
+  # Frontend Static Site
+  - type: web
+    name: nexashop-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: npm run build
+    staticPublishPath: build
+    rootDir: frontend
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://nexashop-backend.onrender.com # Update with actual backend URL
+      - key: REACT_APP_STRIPE_PUBLISHABLE_KEY
+        sync: false # You'll need to add this manually in Render dashboard
+
+# Database
+databases:
+  - name: nexashop-mongodb
+    plan: free
+    region: oregon
