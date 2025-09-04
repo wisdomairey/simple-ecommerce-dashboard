@@ -8,12 +8,14 @@
 
 ## ✅ **Fix Applied**
 
-### 1. **Updated GitHub** 
+### 1. **Updated GitHub**
+
 - Pushed latest commit with fixes to `origin/main`
 - Render will now use the updated code
 
 ### 2. **Improved Build Command**
-- Changed from: `npm run build`  
+
+- Changed from: `npm run build`
 - Changed to: `npm ci && npm run build`
 - This ensures clean install and proper permissions
 
@@ -24,10 +26,12 @@
 1. **Go to Render Dashboard** → **Static Sites** → **Create New**
 
 2. **Connect Repository**:
+
    - Choose your GitHub repo: `wisdomairey/simple-ecommerce-dashboard`
    - Make sure it's using the latest commit (not `1974b59b`)
 
 3. **Configuration**:
+
    ```
    Name: nexashop-frontend
    Branch: main
@@ -37,6 +41,7 @@
    ```
 
 4. **Environment Variables**:
+
    ```
    REACT_APP_API_URL = https://nexashop-backend-q7yo.onrender.com
    REACT_APP_STRIPE_PUBLISHABLE_KEY = pk_test_your_stripe_key
@@ -62,13 +67,15 @@ If you already created the frontend service:
 ## ⚡ **Quick Commands for Testing**
 
 **Test Backend API**:
+
 ```bash
 curl https://nexashop-backend-q7yo.onrender.com/api/health
 ```
 
 **Expected Response**:
+
 ```json
-{"status":"OK","timestamp":"2025-09-04T..."}
+{ "status": "OK", "timestamp": "2025-09-04T..." }
 ```
 
 ## 🎯 **Current Status**
