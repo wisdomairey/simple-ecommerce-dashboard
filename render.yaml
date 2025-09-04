@@ -34,7 +34,7 @@ services:
     rootDir: frontend
     envVars:
       - key: REACT_APP_API_URL
-        value: https://nexashop-backend.onrender.com # Update with actual backend URL
+        value: https://nexashop-backend-q7yo.onrender.com # Your actual backend URL
       - key: REACT_APP_STRIPE_PUBLISHABLE_KEY
         sync: false # You'll need to add this manually in Render dashboard
 
