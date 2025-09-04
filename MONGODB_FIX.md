@@ -8,12 +8,14 @@ But it needs MongoDB connection. Here's how to fix it:
 
 1. **Go to MongoDB Atlas**: https://cloud.mongodb.com
 2. **Create Account** (free)
-3. **Create Cluster**: 
+3. **Create Cluster**:
+
    - Choose "M0 Sandbox" (FREE)
    - Select a region close to Oregon (where your Render service is)
    - Name it something like "nexashop-cluster"
 
 4. **Create Database User**:
+
    - Go to "Database Access"
    - Click "Add New Database User"
    - Choose "Password" authentication
@@ -22,12 +24,14 @@ But it needs MongoDB connection. Here's how to fix it:
    - Database User Privileges: "Read and write to any database"
 
 5. **Network Access**:
+
    - Go to "Network Access"
    - Click "Add IP Address"
    - Choose "Allow Access from Anywhere" (0.0.0.0/0)
    - Or add Render's specific IPs if you prefer
 
 6. **Get Connection String**:
+
    - Go to "Database" → "Connect"
    - Choose "Connect your application"
    - Copy the connection string
@@ -35,6 +39,7 @@ But it needs MongoDB connection. Here's how to fix it:
    - Change database name from `myFirstDatabase` to `nexashop`
 
    Example:
+
    ```
    mongodb+srv://nexashop-admin:YOUR_PASSWORD@nexashop-cluster.abc123.mongodb.net/nexashop?retryWrites=true&w=majority
    ```
@@ -48,11 +53,11 @@ But it needs MongoDB connection. Here's how to fix it:
 
    ```
    MONGODB_URI = mongodb+srv://nexashop-admin:YOUR_PASSWORD@nexashop-cluster.abc123.mongodb.net/nexashop?retryWrites=true&w=majority
-   
+
    JWT_SECRET = your-super-secret-jwt-key-at-least-32-characters-long-for-security
-   
+
    STRIPE_SECRET_KEY = sk_test_your_stripe_secret_key_from_stripe_dashboard
-   
+
    FRONTEND_URL = https://nexashop-frontend.onrender.com
    ```
 
@@ -77,6 +82,7 @@ Now deploy your frontend as a **Static Site**:
 5. **Publish Directory**: `build`
 
 **Environment Variables for Frontend**:
+
 ```
 REACT_APP_API_URL = https://nexashop-backend-q7yo.onrender.com
 
@@ -94,6 +100,7 @@ Once connected, seed your database:
 ## ✅ **Verification**
 
 Your backend should now:
+
 - ✅ Connect to MongoDB Atlas
 - ✅ Have no connection errors in logs
 - ✅ Respond to API requests
